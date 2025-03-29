@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1 Exercises - Interactive AI Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Module 1: Search and Problem Solving - Exercises</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Back to Course</a></li>
+                <li><a href="#exercise1">Exercise 1</a></li>
+                <li><a href="#exercise2">Exercise 2</a></li>
+                <li><a href="#exercise3">Exercise 3</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="exercise1">
+            <h2>Exercise 1: Formulating Search Problems</h2>
+            <p>For each of the following scenarios, identify the key components of a search problem:</p>
+            
+            <div class="exercise-problem">
+                <h3>1. Robot Navigation</h3>
+                <p>A robot needs to navigate from one corner of a warehouse to another, avoiding obstacles.</p>
+                
+                <ol type="a">
+                    <li>What is the state space?</li>
+                    <li>What is the initial state?</li>
+                    <li>What is the goal state?</li>
+                    <li>What are the possible actions?</li>
+                    <li>What would be an appropriate action cost function?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>The state space is all possible positions (x,y coordinates) the robot can occupy in the warehouse.</li>
+                        <li>The initial state is the robot's starting position in one corner of the warehouse.</li>
+                        <li>The goal state is the robot's target position in the opposite corner of the warehouse.</li>
+                        <li>The possible actions are movements in four directions: up, down, left, right (or possibly including diagonal movements).</li>
+                        <li>An appropriate action cost function could be the distance traveled (uniform cost if all movements cost the same, or varied costs if diagonal movements cost more).</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. 8-Puzzle</h3>
+                <p>Consider the 8-puzzle game where you need to arrange numbered tiles in order.</p>
+                
+                <ol type="a">
+                    <li>How would you represent a state in this problem?</li>
+                    <li>How many possible states exist in the 8-puzzle?</li>
+                    <li>What is the branching factor at each state?</li>
+                    <li>Would BFS or GBFS be more appropriate for this problem? Why?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>A state can be represented as a 3×3 grid showing the arrangement of the 8 tiles and the blank space, or as a 1D array of 9 elements.</li>
+                        <li>There are 9! = 362,880 possible arrangements of tiles, but only half of these (9!/2 = 181,440) are reachable from any given state.</li>
+                        <li>The branching factor ranges from 2 to 4, depending on the position of the blank space (corner: 2, edge: 3, center: 4).</li>
+                        <li>GBFS would be more appropriate for this problem because the state space is large, and a good heuristic (like Manhattan distance) can guide the search efficiently. BFS would require too much memory for this problem.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Route Planning</h3>
+                <p>You are designing a GPS navigation system that finds the shortest route between two cities.</p>
+                
+                <ol type="a">
+                    <li>What information would you need to formulate this as a search problem?</li>
+                    <li>What heuristic function might be appropriate for GBFS in this scenario?</li>
+                    <li>Why might tree search be inefficient for this problem?</li>
+                    <li>How would you handle one-way streets in your state space representation?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>You would need a map with cities as nodes and roads as edges, distances between connected cities, the starting city, and the destination city.</li>
+                        <li>Straight-line (Euclidean) distance or great-circle distance to the destination city would be appropriate heuristics for GBFS.</li>
+                        <li>Tree search would be inefficient because there are multiple paths to the same city, leading to redundant exploration of the same cities multiple times.</li>
+                        <li>One-way streets can be handled by making the graph directed, where edges only exist in the direction of allowed travel.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise2">
+            <h2>Exercise 2: Search Algorithm Analysis</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. BFS vs GBFS Comparison</h3>
+                <p>Consider the following graph where S is the start node and G is the goal:</p>
+                
+                <pre>
+S -- A -- B -- C -- G
+|    |         |
+D -- E -- F -- H
+                </pre>
+                
+                <ol type="a">
+                    <li>Trace the order of node expansion using BFS.</li>
+                    <li>If the heuristic values are S:4, A:3, B:2, C:1, D:5, E:4, F:3, H:2, G:0, trace the order of node expansion using GBFS.</li>
+                    <li>Does GBFS find the optimal path in this example? Why or why not?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>BFS expansion order: S, A, D, B, E, C, F, G, H (BFS expands nodes level by level)</li>
+                        <li>GBFS expansion order: S, A, B, C, G (GBFS always expands the node with the lowest heuristic value)</li>
+                        <li>Yes, in this example, GBFS finds the optimal path (S-A-B-C-G). However, this is not guaranteed in general. GBFS happened to find the optimal path because the heuristic values perfectly guided the search along the shortest path.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Tree Search vs Graph Search</h3>
+                <p>Consider a grid world where an agent can move up, down, left, or right, and needs to navigate from the top-left to the bottom-right corner.</p>
+                
+                <ol type="a">
+                    <li>If there are multiple paths to the same location, how would tree search and graph search differ in their exploration?</li>
+                    <li>Calculate the maximum number of nodes that might be expanded by tree search vs graph search for a 3×3 grid.</li>
+                    <li>What is the space complexity advantage of tree search? What is the time complexity advantage of graph search?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>Tree search would explore each path to a location as a separate branch, potentially visiting the same location multiple times. Graph search would only visit each location once, as it keeps track of visited locations.</li>
+                        <li>For a 3×3 grid:
+                            <ul>
+                                <li>Graph search: At most 9 nodes (each cell in the grid)</li>
+                                <li>Tree search: Potentially exponential, as it might revisit cells multiple times. In the worst case, it could expand O(4^d) nodes, where d is the path length.</li>
+                            </ul>
+                        </li>
+                        <li>Tree search has lower space complexity as it doesn't need to store the set of visited nodes. Graph search has better time complexity as it avoids redundant exploration of the same states.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Search Strategy Selection</h3>
+                <p>For each of the following scenarios, identify which search strategy (BFS, DFS, GBFS, or A*) would be most appropriate and explain why:</p>
+                
+                <ol type="a">
+                    <li>Finding the shortest path in a maze with no cycles</li>
+                    <li>Checking if two people are connected on a social network</li>
+                    <li>Finding a solution to a Rubik's cube</li>
+                    <li>Navigation with real-time traffic information</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>BFS would be most appropriate for finding the shortest path in a maze with no cycles, as it guarantees the optimal solution in terms of the number of steps.</li>
+                        <li>BFS or DFS would be appropriate for checking connectivity on a social network. BFS might be preferred if the connection is likely to be close, while DFS might be more memory-efficient for large networks.</li>
+                        <li>A* or GBFS would be appropriate for the Rubik's cube, as the state space is enormous and a good heuristic can guide the search effectively. A* would guarantee optimality if the heuristic is admissible.</li>
+                        <li>A* would be most appropriate for navigation with real-time traffic, as it can find the optimal path while using a heuristic (like straight-line distance) to guide the search efficiently.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise3">
+            <h2>Exercise 3: Implementation Challenge</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Implement BFS</h3>
+                <p>Write pseudocode for a BFS implementation that:</p>
+                <ul>
+                    <li>Finds the shortest path from start to goal</li>
+                    <li>Returns the path as a sequence of states</li>
+                    <li>Handles cycles in the graph</li>
+                </ul>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <pre>
+function BFS(graph, start, goal):
+    # Initialize
+    queue = new Queue()
+    visited = new Set()
+    parent = new Map()
+    
+    # Add start node to queue and visited set
+    queue.enqueue(start)
+    visited.add(start)
+    
+    # BFS loop
+    while queue is not empty:
+        current = queue.dequeue()
+        
+        # Check if goal is reached
+        if current equals goal:
+            return reconstructPath(parent, start, goal)
+        
+        # Explore neighbors
+        for each neighbor of current in graph:
+            if neighbor is not in visited:
+                queue.enqueue(neighbor)
+                visited.add(neighbor)
+                parent[neighbor] = current
+    
+    # No path found
+    return "No path exists"
+
+function reconstructPath(parent, start, goal):
+    path = new List()
+    current = goal
+    
+    # Trace back from goal to start
+    while current != start:
+        path.prepend(current)
+        current = parent[current]
+    
+    path.prepend(start)
+    return path
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Design a Heuristic</h3>
+                <p>For the 8-puzzle problem:</p>
+                <ul>
+                    <li>Define a heuristic function that estimates the distance to the goal state</li>
+                    <li>Analyze whether your heuristic is admissible (never overestimates)</li>
+                    <li>Explain how your heuristic would guide GBFS</li>
+                </ul>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Manhattan Distance Heuristic:</strong></p>
+                    <pre>
+function manhattanDistance(state, goalState):
+    distance = 0
+    for each tile in state:
+        if tile is not blank:
+            currentRow, currentCol = position of tile in state
+            goalRow, goalCol = position of tile in goalState
+            distance += |currentRow - goalRow| + |currentCol - goalCol|
+    return distance
+                    </pre>
+                    
+                    <p><strong>Admissibility Analysis:</strong> The Manhattan distance heuristic is admissible for the 8-puzzle because it counts the minimum number of moves needed to get each tile to its goal position, assuming tiles can move independently. Since tiles cannot move independently (they must move into the blank space), the actual number of moves required will always be at least as large as the Manhattan distance.</p>
+                    
+                    <p><strong>Guiding GBFS:</strong> The Manhattan distance heuristic would guide GBFS by prioritizing states where tiles are closer to their goal positions. States with lower Manhattan distances would be explored first, leading the search toward the goal state. This heuristic effectively captures the notion of "closeness" to the goal in the 8-puzzle problem.</p>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Optimize Graph Search</h3>
+                <p>Suggest optimizations for a graph search implementation that would:</p>
+                <ul>
+                    <li>Reduce memory usage</li>
+                    <li>Improve node expansion efficiency</li>
+                    <li>Handle very large state spaces</li>
+                </ul>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Memory Usage Optimizations:</strong></p>
+                    <ul>
+                        <li>Use a compact state representation (e.g., bit vectors for boolean states)</li>
+                        <li>Implement a hash-based visited set instead of storing complete states</li>
+                        <li>Use iterative deepening to trade time for space in memory-constrained environments</li>
+                        <li>Implement frontier pruning to remove suboptimal paths to the same state</li>
+                    </ul>
+                    
+                    <p><strong>Node Expansion Efficiency:</strong></p>
+                    <ul>
+                        <li>Use efficient data structures for the frontier (e.g., binary heap for A* or GBFS)</li>
+                        <li>Implement lazy evaluation of successor states</li>
+                        <li>Cache frequently accessed or computed values</li>
+                        <li>Use domain-specific knowledge to prune obviously bad states</li>
+                    </ul>
+                    
+                    <p><strong>Handling Large State Spaces:</strong></p>
+                    <ul>
+                        <li>Implement beam search to limit the frontier size</li>
+                        <li>Use abstraction to solve simplified versions of the problem first</li>
+                        <li>Implement hierarchical search approaches</li>
+                        <li>Consider memory-bounded search algorithms like SMA* (Simplified Memory-bounded A*)</li>
+                        <li>Use external memory (disk) for storing the visited set in extremely large state spaces</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <div class="navigation-buttons">
+            <a href="../index.html" class="button">Back to Course</a>
+            <a href="module2_exercises.html" class="button">Next: Module 2 Exercises</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Interactive AI Course. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Show/hide solutions
+        document.addEventListener('DOMContentLoaded', function() {
+            const solutions = document.querySelectorAll('.solution');
+            
+            solutions.forEach(solution => {
+                // Initially hide solutions
+                solution.style.display = 'none';
+                
+                // Create show/hide button
+                const button = document.createElement('button');
+                button.textContent = 'Show Solution';
+                button.className = 'button';
+                
+                button.addEventListener('click', function() {
+                    if (solution.style.display === 'none') {
+                        solution.style.display = 'block';
+                        button.textContent = 'Hide Solution';
+                    } else {
+                        solution.style.display = 'none';
+                        button.textContent = 'Show Solution';
+                    }
+                });
+                
+                // Insert button before the solution
+                solution.parentNode.insertBefore(button, solution);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 Exercises - Interactive AI Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Module 2: Propositional Logic and Knowledge-Based Agents - Exercises</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Back to Course</a></li>
+                <li><a href="#exercise1">Exercise 1</a></li>
+                <li><a href="#exercise2">Exercise 2</a></li>
+                <li><a href="#exercise3">Exercise 3</a></li>
+                <li><a href="#exercise4">Exercise 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="exercise1">
+            <h2>Exercise 1: Propositional Logic Fundamentals</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Logical Expressions</h3>
+                <p>For each of the following English statements, translate them into propositional logic:</p>
+                
+                <ol type="a">
+                    <li>If it is raining, then the ground is wet.</li>
+                    <li>The alarm will sound if and only if there is a fire or a test is being conducted.</li>
+                    <li>The system will shut down if the temperature is too high and the pressure is too low, or if the emergency button is pressed.</li>
+                    <li>The light will turn on if the switch is up, unless the power is out.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>R → W<br>
+                            Where R: "It is raining", W: "The ground is wet"</li>
+                        <li>A ↔ (F ∨ T)<br>
+                            Where A: "The alarm will sound", F: "There is a fire", T: "A test is being conducted"</li>
+                        <li>((H ∧ L) ∨ E) → S<br>
+                            Where H: "Temperature is too high", L: "Pressure is too low", E: "Emergency button is pressed", S: "System will shut down"</li>
+                        <li>(U ∧ ¬P) → L<br>
+                            Where U: "Switch is up", P: "Power is out", L: "Light will turn on"</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Truth Tables</h3>
+                <p>Construct truth tables for the following expressions:</p>
+                
+                <ol type="a">
+                    <li>(P ∧ Q) → R</li>
+                    <li>P → (Q → R)</li>
+                    <li>(P ∨ Q) ↔ (¬P → Q)</li>
+                    <li>¬(P ∧ Q) ↔ (¬P ∨ ¬Q) [De Morgan's Law]</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>a) (P ∧ Q) → R</p>
+                    <table border="1" cellpadding="5">
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                            <th>R</th>
+                            <th>P ∧ Q</th>
+                            <th>(P ∧ Q) → R</th>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                    </table>
+                    
+                    <p>b) P → (Q → R)</p>
+                    <table border="1" cellpadding="5">
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                            <th>R</th>
+                            <th>Q → R</th>
+                            <th>P → (Q → R)</th>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                    </table>
+                    
+                    <p>c) (P ∨ Q) ↔ (¬P → Q)</p>
+                    <table border="1" cellpadding="5">
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                            <th>P ∨ Q</th>
+                            <th>¬P</th>
+                            <th>¬P → Q</th>
+                            <th>(P ∨ Q) ↔ (¬P → Q)</th>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                    </table>
+                    
+                    <p>d) ¬(P ∧ Q) ↔ (¬P ∨ ¬Q) [De Morgan's Law]</p>
+                    <table border="1" cellpadding="5">
+                        <tr>
+                            <th>P</th>
+                            <th>Q</th>
+                            <th>P ∧ Q</th>
+                            <th>¬(P ∧ Q)</th>
+                            <th>¬P</th>
+                            <th>¬Q</th>
+                            <th>¬P ∨ ¬Q</th>
+                            <th>¬(P ∧ Q) ↔ (¬P ∨ ¬Q)</th>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                        <tr>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>F</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                            <td>T</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Logical Equivalence</h3>
+                <p>Determine whether the following pairs of expressions are logically equivalent. Justify your answer using truth tables or logical laws:</p>
+                
+                <ol type="a">
+                    <li>P → Q and ¬P ∨ Q</li>
+                    <li>P → (Q → R) and (P ∧ Q) → R</li>
+                    <li>¬(P → Q) and P ∧ ¬Q</li>
+                    <li>(P → R) ∧ (Q → R) and (P ∨ Q) → R</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p>P → Q and ¬P ∨ Q are logically equivalent.</p>
+                            <p>Justification: By the definition of implication, P → Q is false only when P is true and Q is false; it is true in all other cases. Similarly, ¬P ∨ Q is false only when P is true and Q is false. Therefore, they have the same truth values for all possible assignments of P and Q.</p>
+                        </li>
+                        <li>
+                            <p>P → (Q → R) and (P ∧ Q) → R are logically equivalent.</p>
+                            <p>Justification: P → (Q → R) can be rewritten as P → (¬Q ∨ R), which is equivalent to ¬P ∨ (¬Q ∨ R), which simplifies to ¬P ∨ ¬Q ∨ R. This is equivalent to ¬(P ∧ Q) ∨ R, which is the definition of (P ∧ Q) → R.</p>
+                        </li>
+                        <li>
+                            <p>¬(P → Q) and P ∧ ¬Q are logically equivalent.</p>
+                            <p>Justification: P → Q is equivalent to ¬P ∨ Q. Therefore, ¬(P → Q) is equivalent to ¬(¬P ∨ Q), which by De Morgan's law is equivalent to ¬¬P ∧ ¬Q, which simplifies to P ∧ ¬Q.</p>
+                        </li>
+                        <li>
+                            <p>(P → R) ∧ (Q → R) and (P ∨ Q) → R are logically equivalent.</p>
+                            <p>Justification: (P → R) ∧ (Q → R) is equivalent to (¬P ∨ R) ∧ (¬Q ∨ R), which can be rewritten as (¬P ∧ ¬Q) ∨ R by distributive law. By De Morgan's law, ¬P ∧ ¬Q is equivalent to ¬(P ∨ Q). Therefore, (¬P ∧ ¬Q) ∨ R is equivalent to ¬(P ∨ Q) ∨ R, which is the definition of (P ∨ Q) → R.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise2">
+            <h2>Exercise 2: Knowledge-Based Agents</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Knowledge Base Construction</h3>
+                <p>Consider a knowledge base for a home automation system. Define propositional symbols and construct a knowledge base with at least five rules that capture the following scenarios:</p>
+                
+                <ol type="a">
+                    <li>The lights turn on if motion is detected and it is dark.</li>
+                    <li>The heating turns on if the temperature is below the threshold and someone is home.</li>
+                    <li>The alarm sounds if motion is detected and the system is armed.</li>
+                    <li>The system is armed if the residents are away or it is nighttime and everyone is asleep.</li>
+                    <li>The windows close if it starts raining or if the air conditioning is on.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Propositional Symbols:</strong></p>
+                    <ul>
+                        <li>M: Motion is detected</li>
+                        <li>D: It is dark</li>
+                        <li>L: Lights turn on</li>
+                        <li>T: Temperature is below threshold</li>
+                        <li>H: Someone is home</li>
+                        <li>E: Heating turns on</li>
+                        <li>A: System is armed</li>
+                        <li>S: Alarm sounds</li>
+                        <li>R: Residents are away</li>
+                        <li>N: It is nighttime</li>
+                        <li>P: Everyone is asleep</li>
+                        <li>W: Windows close</li>
+                        <li>C: It starts raining</li>
+                        <li>AC: Air conditioning is on</li>
+                    </ul>
+                    
+                    <p><strong>Knowledge Base Rules:</strong></p>
+                    <ol type="a">
+                        <li>(M ∧ D) → L</li>
+                        <li>(T ∧ H) → E</li>
+                        <li>(M ∧ A) → S</li>
+                        <li>(R ∨ (N ∧ P)) → A</li>
+                        <li>(C ∨ AC) → W</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Knowledge Base Queries</h3>
+                <p>Using the knowledge base you constructed in the previous question, determine whether the following queries are entailed:</p>
+                
+                <ol type="a">
+                    <li>Will the lights turn on if motion is detected but it is not dark?</li>
+                    <li>Will the heating turn on if the temperature is below threshold but no one is home?</li>
+                    <li>If the residents are away and motion is detected, will the alarm sound?</li>
+                    <li>If it is nighttime, everyone is asleep, and motion is detected, will the alarm sound?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p>Query: M ∧ ¬D → L</p>
+                            <p>Analysis: The knowledge base contains (M ∧ D) → L, which means the lights turn on if motion is detected AND it is dark. If it is not dark (¬D), the condition is not satisfied. Therefore, the query is not entailed by the knowledge base.</p>
+                        </li>
+                        <li>
+                            <p>Query: T ∧ ¬H → E</p>
+                            <p>Analysis: The knowledge base contains (T ∧ H) → E, which means the heating turns on if the temperature is below threshold AND someone is home. If no one is home (¬H), the condition is not satisfied. Therefore, the query is not entailed by the knowledge base.</p>
+                        </li>
+                        <li>
+                            <p>Query: R ∧ M → S</p>
+                            <p>Analysis: From the knowledge base, we have (R ∨ (N ∧ P)) → A and (M ∧ A) → S. If the residents are away (R), then the system is armed (A). If motion is detected (M) and the system is armed (A), then the alarm sounds (S). Therefore, the query is entailed by the knowledge base.</p>
+                        </li>
+                        <li>
+                            <p>Query: N ∧ P ∧ M → S</p>
+                            <p>Analysis: From the knowledge base, we have (R ∨ (N ∧ P)) → A and (M ∧ A) → S. If it is nighttime (N) and everyone is asleep (P), then the system is armed (A). If motion is detected (M) and the system is armed (A), then the alarm sounds (S). Therefore, the query is entailed by the knowledge base.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. TELL and ASK Operations</h3>
+                <p>For a knowledge-based agent:</p>
+                
+                <ol type="a">
+                    <li>Describe the process of adding new information to the knowledge base using the TELL operation.</li>
+                    <li>Explain how the ASK operation determines if a query is entailed by the knowledge base.</li>
+                    <li>If an agent observes that "it is raining" and its knowledge base contains "if it is raining, then the ground is wet," describe the steps the agent would take to determine if "the ground is wet."</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>TELL Operation Process:</strong></p>
+                            <ol>
+                                <li>The agent perceives new information from its environment or receives it from another source.</li>
+                                <li>The agent converts this information into a sentence in the knowledge representation language (e.g., propositional logic).</li>
+                                <li>The agent checks if adding this new sentence would create a contradiction in the knowledge base. If it would, the agent might need to revise existing beliefs.</li>
+                                <li>If no contradiction would arise, the agent adds the new sentence to its knowledge base.</li>
+                                <li>The agent may also derive additional sentences that follow from the new information and existing knowledge, and add these to the knowledge base as well.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p><strong>ASK Operation Process:</strong></p>
+                            <ol>
+                                <li>The agent receives a query in the form of a sentence in the knowledge representation language.</li>
+                                <li>The agent determines whether the knowledge base entails the query, which means checking if the query must be true given that all sentences in the knowledge base are true.</li>
+                                <li>This can be done through various inference methods:
+                                    <ul>
+                                        <li>Truth tables (for small knowledge bases)</li>
+                                        <li>Resolution (proving by contradiction that KB ∧ ¬query leads to a contradiction)</li>
+                                        <li>Forward chaining (deriving new facts until the query is proven or no new facts can be derived)</li>
+                                        <li>Backward chaining (starting with the query and working backward to see if it can be derived from the knowledge base)</li>
+                                    </ul>
+                                </li>
+                                <li>The agent returns the result of the entailment check (true or false).</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p><strong>Determining if "the ground is wet":</strong></p>
+                            <ol>
+                                <li>The agent observes "it is raining" and uses the TELL operation to add this fact to its knowledge base: TELL(KB, "it is raining").</li>
+                                <li>The knowledge base now contains:
+                                    <ul>
+                                        <li>"it is raining" (R)</li>
+                                        <li>"if it is raining, then the ground is wet" (R → W)</li>
+                                    </ul>
+                                </li>
+                                <li>The agent uses the ASK operation to query whether "the ground is wet" is entailed: ASK(KB, "the ground is wet").</li>
+                                <li>The inference process (e.g., forward chaining) would work as follows:
+                                    <ul>
+                                        <li>Start with the known fact: "it is raining" (R).</li>
+                                        <li>Apply the rule "if it is raining, then the ground is wet" (R → W).</li>
+                                        <li>Derive the new fact: "the ground is wet" (W).</li>
+                                    </ul>
+                                </li>
+                                <li>Since "the ground is wet" can be derived from the knowledge base, the ASK operation returns true.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise3">
+            <h2>Exercise 3: Inference in Propositional Logic</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Inference Rules</h3>
+                <p>Apply the following inference rules to derive new sentences:</p>
+                
+                <ol type="a">
+                    <li>From P → Q and P, use Modus Ponens to derive a new sentence.</li>
+                    <li>From P → Q and ¬Q, use Modus Tollens to derive a new sentence.</li>
+                    <li>From P ∨ Q and ¬P, use Disjunctive Syllogism to derive a new sentence.</li>
+                    <li>From P and Q, use Conjunction Introduction to derive a new sentence.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Modus Ponens:</strong></p>
+                            <p>Premises: P → Q, P</p>
+                            <p>Conclusion: Q</p>
+                            <p>Explanation: If P implies Q, and P is true, then Q must be true.</p>
+                        </li>
+                        <li>
+                            <p><strong>Modus Tollens:</strong></p>
+                            <p>Premises: P → Q, ¬Q</p>
+                            <p>Conclusion: ¬P</p>
+                            <p>Explanation: If P implies Q, and Q is false, then P must be false (otherwise, Q would be true).</p>
+                        </li>
+                        <li>
+                            <p><strong>Disjunctive Syllogism:</strong></p>
+                            <p>Premises: P ∨ Q, ¬P</p>
+                            <p>Conclusion: Q</p>
+                            <p>Explanation: If either P or Q is true, and P is false, then Q must be true.</p>
+                        </li>
+                        <li>
+                            <p><strong>Conjunction Introduction:</strong></p>
+                            <p>Premises: P, Q</p>
+                            <p>Conclusion: P ∧ Q</p>
+                            <p>Explanation: If P is true and Q is true, then the conjunction of P and Q is true.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Forward and Backward Chaining</h3>
+                <p>Consider the following knowledge base:</p>
+                <ul>
+                    <li>P → Q</li>
+                    <li>Q → R</li>
+                    <li>S → T</li>
+                    <li>P ∧ S → U</li>
+                    <li>P</li>
+                    <li>S</li>
+                </ul>
+                
+                <ol type="a">
+                    <li>Apply forward chaining to determine all sentences that can be derived.</li>
+                    <li>Apply backward chaining to determine if U can be derived.</li>
+                    <li>Apply backward chaining to determine if R can be derived.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Forward Chaining:</strong></p>
+                            <ol>
+                                <li>Start with known facts: P, S</li>
+                                <li>Apply rule P → Q to derive Q</li>
+                                <li>Apply rule Q → R to derive R</li>
+                                <li>Apply rule S → T to derive T</li>
+                                <li>Apply rule P ∧ S → U to derive U</li>
+                            </ol>
+                            <p>All derived sentences: P, S, Q, R, T, U</p>
+                        </li>
+                        <li>
+                            <p><strong>Backward Chaining for U:</strong></p>
+                            <ol>
+                                <li>Goal: U</li>
+                                <li>Rule that concludes U: P ∧ S → U</li>
+                                <li>New goals: P, S</li>
+                                <li>P is a known fact</li>
+                                <li>S is a known fact</li>
+                                <li>Both P and S are true, so U can be derived</li>
+                            </ol>
+                            <p>Conclusion: Yes, U can be derived.</p>
+                        </li>
+                        <li>
+                            <p><strong>Backward Chaining for R:</strong></p>
+                            <ol>
+                                <li>Goal: R</li>
+                                <li>Rule that concludes R: Q → R</li>
+                                <li>New goal: Q</li>
+                                <li>Rule that concludes Q: P → Q</li>
+                                <li>New goal: P</li>
+                                <li>P is a known fact</li>
+                                <li>Since P is true, Q can be derived</li>
+                                <li>Since Q is true, R can be derived</li>
+                            </ol>
+                            <p>Conclusion: Yes, R can be derived.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Resolution</h3>
+                <p>Convert the following sentences to CNF and apply resolution to determine if the query is entailed:</p>
+                
+                <p>Knowledge Base:</p>
+                <ul>
+                    <li>P → Q</li>
+                    <li>Q → R</li>
+                    <li>¬R</li>
+                </ul>
+                
+                <p>Query: ¬P</p>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Step 1: Convert KB to CNF</strong></p>
+                    <ul>
+                        <li>P → Q is equivalent to ¬P ∨ Q</li>
+                        <li>Q → R is equivalent to ¬Q ∨ R</li>
+                        <li>¬R is already in CNF</li>
+                    </ul>
+                    
+                    <p><strong>Step 2: Negate the query and add to KB</strong></p>
+                    <ul>
+                        <li>Negation of query ¬P is P</li>
+                        <li>Add P to KB</li>
+                    </ul>
+                    
+                    <p><strong>Step 3: Apply resolution</strong></p>
+                    <ol>
+                        <li>Resolve P and ¬P ∨ Q to get Q</li>
+                        <li>Resolve Q and ¬Q ∨ R to get R</li>
+                        <li>Resolve R and ¬R to get the empty clause (contradiction)</li>
+                    </ol>
+                    
+                    <p><strong>Step 4: Determine entailment</strong></p>
+                    <p>Since resolution produced the empty clause (contradiction), the KB ∧ ¬query is unsatisfiable. Therefore, the KB entails the query ¬P.</p>
+                    
+                    <p>Conclusion: Yes, ¬P is entailed by the knowledge base.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise4">
+            <h2>Exercise 4: Satisfiability Algorithms</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. DPLL Algorithm</h3>
+                <p>Trace the execution of the DPLL algorithm on the following CNF formula:</p>
+                
+                <p>(A ∨ B) ∧ (¬A ∨ C) ∧ (¬B ∨ ¬C) ∧ (A ∨ ¬C)</p>
+                
+                <ol type="a">
+                    <li>Show the initial state of the formula.</li>
+                    <li>Apply unit propagation if possible.</li>
+                    <li>Apply pure literal elimination if possible.</li>
+                    <li>Choose a variable and branch, continuing the algorithm until a satisfying assignment is found or the formula is proven unsatisfiable.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Initial state:</strong></p>
+                    <p>Formula: (A ∨ B) ∧ (¬A ∨ C) ∧ (¬B ∨ ¬C) ∧ (A ∨ ¬C)</p>
+                    <p>Clauses:</p>
+                    <ol>
+                        <li>A ∨ B</li>
+                        <li>¬A ∨ C</li>
+                        <li>¬B ∨ ¬C</li>
+                        <li>A ∨ ¬C</li>
+                    </ol>
+                    
+                    <p><strong>Step 1: Check for unit clauses</strong></p>
+                    <p>There are no unit clauses in the formula.</p>
+                    
+                    <p><strong>Step 2: Check for pure literals</strong></p>
+                    <p>No pure literals exist in the formula.</p>
+                    
+                    <p><strong>Step 3: Choose a variable and branch</strong></p>
+                    <p>Let's choose A and set it to true.</p>
+                    
+                    <p><strong>Step 4: Simplify the formula with A = true</strong></p>
+                    <p>Clauses after setting A = true:</p>
+                    <ol>
+                        <li>Clause 1 (A ∨ B) is satisfied, removed</li>
+                        <li>Clause 2 (¬A ∨ C) simplifies to C</li>
+                        <li>Clause 3 (¬B ∨ ¬C) remains unchanged</li>
+                        <li>Clause 4 (A ∨ ¬C) is satisfied, removed</li>
+                    </ol>
+                    <p>Simplified formula: C ∧ (¬B ∨ ¬C)</p>
+                    
+                    <p><strong>Step 5: Apply unit propagation</strong></p>
+                    <p>C is a unit clause, so set C = true</p>
+                    <p>Clauses after setting C = true:</p>
+                    <ol>
+                        <li>Clause 1 (C) is satisfied, removed</li>
+                        <li>Clause 2 (¬B ∨ ¬C) simplifies to ¬B</li>
+                    </ol>
+                    <p>Simplified formula: ¬B</p>
+                    
+                    <p><strong>Step 6: Apply unit propagation again</strong></p>
+                    <p>¬B is a unit clause, so set B = false</p>
+                    <p>All clauses are now satisfied.</p>
+                    
+                    <p><strong>Result:</strong></p>
+                    <p>The formula is satisfiable with the assignment: A = true, B = false, C = true</p>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. WalkSAT Algorithm</h3>
+                <p>Trace the execution of the WalkSAT algorithm on the same formula as above:</p>
+                
+                <p>(A ∨ B) ∧ (¬A ∨ C) ∧ (¬B ∨ ¬C) ∧ (A ∨ ¬C)</p>
+                
+                <ol type="a">
+                    <li>Start with a random assignment (e.g., A=true, B=true, C=true).</li>
+                    <li>Identify unsatisfied clauses.</li>
+                    <li>Choose a variable to flip (either randomly or to minimize unsatisfied clauses).</li>
+                    <li>Show the next state after flipping.</li>
+                    <li>Continue for at least three iterations or until a satisfying assignment is found.</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Initial assignment:</strong> A = true, B = true, C = true</p>
+                    
+                    <p><strong>Iteration 1:</strong></p>
+                    <p>Evaluate clauses:</p>
+                    <ol>
+                        <li>A ∨ B: true (both A and B are true)</li>
+                        <li>¬A ∨ C: true (C is true)</li>
+                        <li>¬B ∨ ¬C: false (both B and C are true)</li>
+                        <li>A ∨ ¬C: true (A is true)</li>
+                    </ol>
+                    <p>Unsatisfied clause: ¬B ∨ ¬C</p>
+                    <p>Variables in unsatisfied clause: B, C</p>
+                    <p>Let's flip B (either randomly or to minimize unsatisfied clauses)</p>
+                    <p>New assignment: A = true, B = false, C = true</p>
+                    
+                    <p><strong>Iteration 2:</strong></p>
+                    <p>Evaluate clauses:</p>
+                    <ol>
+                        <li>A ∨ B: true (A is true)</li>
+                        <li>¬A ∨ C: true (C is true)</li>
+                        <li>¬B ∨ ¬C: true (B is false)</li>
+                        <li>A ∨ ¬C: true (A is true)</li>
+                    </ol>
+                    <p>All clauses are satisfied!</p>
+                    
+                    <p><strong>Result:</strong></p>
+                    <p>The formula is satisfiable with the assignment: A = true, B = false, C = true</p>
+                    <p>WalkSAT found a satisfying assignment in just one flip.</p>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Algorithm Comparison</h3>
+                <p>Compare DPLL and WalkSAT on the following dimensions:</p>
+                
+                <ol type="a">
+                    <li>Completeness: Can the algorithm determine with certainty if a formula is unsatisfiable?</li>
+                    <li>Efficiency: How do the algorithms perform on large formulas?</li>
+                    <li>Determinism: Do the algorithms always produce the same result given the same input?</li>
+                    <li>Application: For what types of problems is each algorithm better suited?</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Completeness:</strong></p>
+                            <p>DPLL: Yes, DPLL is complete. It systematically explores the space of possible assignments and can determine with certainty if a formula is unsatisfiable.</p>
+                            <p>WalkSAT: No, WalkSAT is incomplete. It uses a randomized local search approach and cannot prove unsatisfiability. If it doesn't find a satisfying assignment within the maximum number of iterations, it cannot conclude that the formula is unsatisfiable.</p>
+                        </li>
+                        <li>
+                            <p><strong>Efficiency:</strong></p>
+                            <p>DPLL: DPLL can be efficient for structured problems with specific patterns, but its worst-case time complexity is exponential. It may struggle with very large random instances.</p>
+                            <p>WalkSAT: WalkSAT can be very efficient for large satisfiable formulas, especially those with a structure that creates a "landscape" conducive to local search. It can often find satisfying assignments quickly for problems that would be challenging for DPLL.</p>
+                        </li>
+                        <li>
+                            <p><strong>Determinism:</strong></p>
+                            <p>DPLL: Yes, DPLL is deterministic. Given the same formula and variable ordering heuristic, it will always produce the same result.</p>
+                            <p>WalkSAT: No, WalkSAT is non-deterministic due to its random choices. It may produce different results on different runs, even with the same input.</p>
+                        </li>
+                        <li>
+                            <p><strong>Application:</strong></p>
+                            <p>DPLL is better suited for:</p>
+                            <ul>
+                                <li>Problems where proving unsatisfiability is important</li>
+                                <li>Structured problems with clear patterns</li>
+                                <li>Applications requiring deterministic behavior</li>
+                                <li>Problems where finding all solutions is needed</li>
+                                <li>Verification and formal methods</li>
+                            </ul>
+                            <p>WalkSAT is better suited for:</p>
+                            <ul>
+                                <li>Large satisfiable instances where finding any solution is sufficient</li>
+                                <li>Problems with many solutions scattered throughout the search space</li>
+                                <li>Applications where quick approximate solutions are acceptable</li>
+                                <li>Problems with a structure that creates "funnels" in the search space</li>
+                                <li>Real-time applications with time constraints</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <div class="navigation-buttons">
+            <a href="../index.html" class="button">Back to Course</a>
+            <a href="module1_exercises.html" class="button">Previous: Module 1 Exercises</a>
+            <a href="module3_exercises.html" class="button">Next: Module 3 Exercises</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Interactive AI Course. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Show/hide solutions
+        document.addEventListener('DOMContentLoaded', function() {
+            const solutions = document.querySelectorAll('.solution');
+            
+            solutions.forEach(solution => {
+                // Initially hide solutions
+                solution.style.display = 'none';
+                
+                // Create show/hide button
+                const button = document.createElement('button');
+                button.textContent = 'Show Solution';
+                button.className = 'button';
+                
+                button.addEventListener('click', function() {
+                    if (solution.style.display === 'none') {
+                        solution.style.display = 'block';
+                        button.textContent = 'Hide Solution';
+                    } else {
+                        solution.style.display = 'none';
+                        button.textContent = 'Show Solution';
+                    }
+                });
+                
+                // Insert button before the solution
+                solution.parentNode.insertBefore(button, solution);
+            });
+        });
+    </script>
+</body>
+</html>

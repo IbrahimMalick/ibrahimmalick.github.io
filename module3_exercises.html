@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 3 Exercises - Interactive AI Course</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Module 3: Introduction to Machine Learning - Exercises</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Back to Course</a></li>
+                <li><a href="#exercise1">Exercise 1</a></li>
+                <li><a href="#exercise2">Exercise 2</a></li>
+                <li><a href="#exercise3">Exercise 3</a></li>
+                <li><a href="#exercise4">Exercise 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="exercise1">
+            <h2>Exercise 1: Learning Paradigm Classification</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Identifying Learning Approaches</h3>
+                <p>For each of the following scenarios, identify whether supervised learning, unsupervised learning, or another approach would be most appropriate, and explain why:</p>
+                
+                <ol type="a">
+                    <li>Grouping customers based on their purchasing behavior</li>
+                    <li>Predicting house prices based on features like size, location, and age</li>
+                    <li>Identifying anomalous transactions in credit card data</li>
+                    <li>Translating text from English to French</li>
+                    <li>Recommending movies to users based on their viewing history</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Unsupervised Learning</strong></p>
+                            <p>Grouping customers based on purchasing behavior is a clustering task, which falls under unsupervised learning. There are no predefined labels or categories; instead, the algorithm discovers natural groupings in the data based on similarities in purchasing patterns. Techniques like K-means clustering or hierarchical clustering would be appropriate.</p>
+                        </li>
+                        <li>
+                            <p><strong>Supervised Learning</strong></p>
+                            <p>Predicting house prices is a regression task, which is a form of supervised learning. The algorithm learns from labeled examples (houses with known prices) to predict the price (continuous output) of new houses based on their features. Linear regression, decision trees, or neural networks could be used for this task.</p>
+                        </li>
+                        <li>
+                            <p><strong>Unsupervised Learning</strong></p>
+                            <p>Identifying anomalous transactions is an anomaly detection task, which is typically approached as an unsupervised learning problem. The algorithm learns the normal pattern of transactions and flags those that deviate significantly from this pattern. Techniques like isolation forests, one-class SVM, or autoencoders are commonly used.</p>
+                        </li>
+                        <li>
+                            <p><strong>Supervised Learning</strong></p>
+                            <p>Machine translation is typically approached as a supervised learning task, specifically sequence-to-sequence learning. The model is trained on pairs of sentences in the source and target languages. Modern approaches use neural machine translation with architectures like transformers.</p>
+                        </li>
+                        <li>
+                            <p><strong>Hybrid Approach (Supervised and Unsupervised)</strong></p>
+                            <p>Recommender systems often use a hybrid approach. Collaborative filtering (finding users with similar tastes) is unsupervised, while content-based filtering (predicting ratings based on movie features) is supervised. Modern recommender systems often combine both approaches with techniques like matrix factorization or deep learning.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Supervised Learning Applications</h3>
+                <p>For each of the following supervised learning tasks, specify whether it is a classification or regression problem, and suggest an appropriate algorithm:</p>
+                
+                <ol type="a">
+                    <li>Predicting whether an email is spam or not</li>
+                    <li>Estimating the age of a person from their facial image</li>
+                    <li>Categorizing news articles into topics (politics, sports, entertainment, etc.)</li>
+                    <li>Forecasting stock prices for the next week</li>
+                    <li>Determining whether a patient has a particular disease based on medical test results</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Classification (Binary)</strong></p>
+                            <p>Predicting whether an email is spam or not is a binary classification problem. Appropriate algorithms include:</p>
+                            <ul>
+                                <li>Naive Bayes (particularly effective for text classification)</li>
+                                <li>Support Vector Machines</li>
+                                <li>Random Forests</li>
+                                <li>Logistic Regression</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Regression</strong></p>
+                            <p>Estimating age from facial images is a regression problem since age is a continuous value. Appropriate algorithms include:</p>
+                            <ul>
+                                <li>Convolutional Neural Networks (CNNs)</li>
+                                <li>Support Vector Regression</li>
+                                <li>Random Forest Regression</li>
+                                <li>Gradient Boosting Regression</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Classification (Multi-class)</strong></p>
+                            <p>Categorizing news articles into topics is a multi-class classification problem. Appropriate algorithms include:</p>
+                            <ul>
+                                <li>Naive Bayes</li>
+                                <li>Support Vector Machines with one-vs-rest strategy</li>
+                                <li>Random Forests</li>
+                                <li>Neural Networks (particularly RNNs or Transformers for text)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Regression (Time Series)</strong></p>
+                            <p>Forecasting stock prices is a time series regression problem. Appropriate algorithms include:</p>
+                            <ul>
+                                <li>ARIMA (AutoRegressive Integrated Moving Average)</li>
+                                <li>LSTM (Long Short-Term Memory) neural networks</li>
+                                <li>Prophet (Facebook's time series forecasting tool)</li>
+                                <li>Gradient Boosting Regression with time-based features</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Classification (Binary)</strong></p>
+                            <p>Determining whether a patient has a disease is a binary classification problem. Appropriate algorithms include:</p>
+                            <ul>
+                                <li>Logistic Regression</li>
+                                <li>Random Forests</li>
+                                <li>Support Vector Machines</li>
+                                <li>Gradient Boosting Classifiers</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Unsupervised Learning Techniques</h3>
+                <p>For each of the following unsupervised learning tasks, suggest an appropriate algorithm and explain how it works:</p>
+                
+                <ol type="a">
+                    <li>Grouping similar documents together</li>
+                    <li>Reducing the dimensionality of high-dimensional data</li>
+                    <li>Identifying patterns in customer purchase data</li>
+                    <li>Detecting outliers in sensor readings</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Grouping similar documents: K-means Clustering or Hierarchical Clustering</strong></p>
+                            <p><u>K-means Clustering:</u></p>
+                            <ol>
+                                <li>Documents are represented as vectors in a high-dimensional space (e.g., using TF-IDF or word embeddings).</li>
+                                <li>The algorithm starts with k randomly placed centroids.</li>
+                                <li>Each document is assigned to the nearest centroid.</li>
+                                <li>Centroids are recalculated as the mean of all documents assigned to them.</li>
+                                <li>Steps 3-4 are repeated until convergence.</li>
+                            </ol>
+                            <p><u>Hierarchical Clustering:</u></p>
+                            <ol>
+                                <li>Start with each document as its own cluster.</li>
+                                <li>Iteratively merge the two most similar clusters.</li>
+                                <li>Continue until all documents are in a single cluster.</li>
+                                <li>The result is a tree-like structure (dendrogram) that can be cut at different levels to get different numbers of clusters.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p><strong>Reducing dimensionality: Principal Component Analysis (PCA) or t-SNE</strong></p>
+                            <p><u>Principal Component Analysis (PCA):</u></p>
+                            <ol>
+                                <li>Compute the covariance matrix of the data.</li>
+                                <li>Find the eigenvectors and eigenvalues of this matrix.</li>
+                                <li>Sort eigenvectors by their eigenvalues in descending order.</li>
+                                <li>Select the top k eigenvectors (principal components) that capture most of the variance.</li>
+                                <li>Project the original data onto these principal components.</li>
+                            </ol>
+                            <p><u>t-SNE (t-Distributed Stochastic Neighbor Embedding):</u></p>
+                            <ol>
+                                <li>Calculate pairwise similarities between data points in the high-dimensional space.</li>
+                                <li>Initialize points randomly in the low-dimensional space.</li>
+                                <li>Iteratively adjust the positions of points in the low-dimensional space to minimize the difference between the similarity distributions in the high and low-dimensional spaces.</li>
+                                <li>Particularly good at preserving local structure and visualizing clusters.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p><strong>Identifying purchase patterns: Association Rule Learning (Apriori Algorithm)</strong></p>
+                            <p><u>Apriori Algorithm:</u></p>
+                            <ol>
+                                <li>Identify all frequent itemsets (sets of items that appear together frequently).</li>
+                                <li>Generate association rules from these frequent itemsets.</li>
+                                <li>Evaluate rules using metrics like support (frequency of the itemset), confidence (conditional probability), and lift (ratio of observed support to expected support).</li>
+                                <li>Example rule: "Customers who buy bread and butter also tend to buy milk."</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <p><strong>Detecting outliers: Isolation Forest or Local Outlier Factor (LOF)</strong></p>
+                            <p><u>Isolation Forest:</u></p>
+                            <ol>
+                                <li>Builds an ensemble of isolation trees for the data.</li>
+                                <li>Randomly selects a feature and a split value between the maximum and minimum values of that feature.</li>
+                                <li>Recursively partitions the data until all points are isolated.</li>
+                                <li>Outliers require fewer partitions to isolate, resulting in shorter paths in the trees.</li>
+                                <li>Points with shorter average path lengths are more likely to be outliers.</li>
+                            </ol>
+                            <p><u>Local Outlier Factor (LOF):</u></p>
+                            <ol>
+                                <li>Calculates the local density of each point based on its k-nearest neighbors.</li>
+                                <li>Compares the density of a point to the densities of its neighbors.</li>
+                                <li>Points with significantly lower density than their neighbors are considered outliers.</li>
+                                <li>Effective at detecting outliers in regions of varying density.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise2">
+            <h2>Exercise 2: Neural Network Components</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Neural Network Architecture</h3>
+                <p>For each of the following components of a neural network, explain its purpose and function:</p>
+                
+                <ol type="a">
+                    <li>Neurons (nodes)</li>
+                    <li>Weights and biases</li>
+                    <li>Activation functions</li>
+                    <li>Loss functions</li>
+                    <li>Backpropagation</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Neurons (nodes)</strong></p>
+                            <p>Neurons are the basic computational units of a neural network. Each neuron:</p>
+                            <ul>
+                                <li>Receives inputs from previous layer neurons or directly from the input data</li>
+                                <li>Applies weights to these inputs and adds a bias term</li>
+                                <li>Passes the weighted sum through an activation function</li>
+                                <li>Outputs the result to the next layer</li>
+                            </ul>
+                            <p>Neurons are organized into layers (input layer, hidden layers, and output layer), with each layer performing different transformations on the data.</p>
+                        </li>
+                        <li>
+                            <p><strong>Weights and Biases</strong></p>
+                            <p>Weights and biases are the learnable parameters of a neural network:</p>
+                            <ul>
+                                <li><u>Weights:</u> Determine the strength of connections between neurons. Each connection between neurons has an associated weight that scales the input value. Weights represent the importance of each input to the neuron.</li>
+                                <li><u>Biases:</u> Allow neurons to shift the activation function. A bias is added to the weighted sum of inputs before applying the activation function. This allows the network to represent patterns that don't pass through the origin.</li>
+                            </ul>
+                            <p>During training, weights and biases are adjusted through backpropagation to minimize the loss function.</p>
+                        </li>
+                        <li>
+                            <p><strong>Activation Functions</strong></p>
+                            <p>Activation functions introduce non-linearity into the network, allowing it to learn complex patterns:</p>
+                            <ul>
+                                <li><u>Sigmoid:</u> Maps input to a value between 0 and 1. Useful for binary classification output layers.</li>
+                                <li><u>Tanh:</u> Maps input to a value between -1 and 1. Similar to sigmoid but zero-centered.</li>
+                                <li><u>ReLU (Rectified Linear Unit):</u> Returns x if x > 0, otherwise returns 0. Computationally efficient and helps mitigate the vanishing gradient problem.</li>
+                                <li><u>Leaky ReLU:</u> Returns x if x > 0, otherwise returns αx (where α is a small constant). Addresses the "dying ReLU" problem.</li>
+                                <li><u>Softmax:</u> Converts a vector of values to a probability distribution. Commonly used in multi-class classification output layers.</li>
+                            </ul>
+                            <p>Without activation functions, a neural network would be equivalent to a linear model, regardless of its depth.</p>
+                        </li>
+                        <li>
+                            <p><strong>Loss Functions</strong></p>
+                            <p>Loss functions measure how well the network's predictions match the true values:</p>
+                            <ul>
+                                <li><u>Mean Squared Error (MSE):</u> Average of squared differences between predicted and actual values. Commonly used for regression tasks.</li>
+                                <li><u>Binary Cross-Entropy:</u> Measures the performance of a classification model whose output is a probability value between 0 and 1. Used for binary classification.</li>
+                                <li><u>Categorical Cross-Entropy:</u> Extension of binary cross-entropy for multi-class classification problems.</li>
+                                <li><u>Hinge Loss:</u> Used for maximum-margin classification, particularly with SVMs.</li>
+                            </ul>
+                            <p>The goal of training is to minimize the loss function by adjusting the weights and biases.</p>
+                        </li>
+                        <li>
+                            <p><strong>Backpropagation</strong></p>
+                            <p>Backpropagation is the algorithm used to train neural networks:</p>
+                            <ol>
+                                <li><u>Forward Pass:</u> Input data is fed through the network to generate predictions.</li>
+                                <li><u>Error Calculation:</u> The loss function computes the error between predictions and true values.</li>
+                                <li><u>Backward Pass:</u> The gradient of the loss with respect to each weight and bias is calculated using the chain rule of calculus, propagating backward from the output layer.</li>
+                                <li><u>Parameter Update:</u> Weights and biases are adjusted in the direction that reduces the loss, typically using gradient descent or its variants.</li>
+                            </ol>
+                            <p>Backpropagation efficiently computes these gradients by reusing intermediate results, making it computationally feasible to train deep networks.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Activation Functions</h3>
+                <p>For each of the following activation functions, sketch its graph, provide its mathematical formula, and explain when it might be appropriate to use:</p>
+                
+                <ol type="a">
+                    <li>Sigmoid</li>
+                    <li>ReLU (Rectified Linear Unit)</li>
+                    <li>Tanh (Hyperbolic Tangent)</li>
+                    <li>Softmax</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Sigmoid</strong></p>
+                            <p>Formula: σ(x) = 1 / (1 + e<sup>-x</sup>)</p>
+                            <p>Graph: S-shaped curve that asymptotically approaches 0 as x approaches negative infinity and 1 as x approaches positive infinity.</p>
+                            <p>Appropriate Use:</p>
+                            <ul>
+                                <li>Output layer of binary classification problems (outputs can be interpreted as probabilities)</li>
+                                <li>Gates in recurrent neural networks (e.g., LSTM, GRU)</li>
+                                <li>When output needs to be bounded between 0 and 1</li>
+                            </ul>
+                            <p>Limitations:</p>
+                            <ul>
+                                <li>Suffers from vanishing gradient problem for very positive or negative inputs</li>
+                                <li>Outputs are not zero-centered, which can slow down convergence</li>
+                                <li>Computationally expensive (involves exponential operation)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>ReLU (Rectified Linear Unit)</strong></p>
+                            <p>Formula: f(x) = max(0, x)</p>
+                            <p>Graph: Linear for x > 0, zero for x ≤ 0.</p>
+                            <p>Appropriate Use:</p>
+                            <ul>
+                                <li>Hidden layers of deep neural networks</li>
+                                <li>Convolutional neural networks</li>
+                                <li>When computational efficiency is important</li>
+                            </ul>
+                            <p>Advantages:</p>
+                            <ul>
+                                <li>Computationally efficient (simple max operation)</li>
+                                <li>Helps mitigate the vanishing gradient problem</li>
+                                <li>Induces sparsity in the network (many neurons can be inactive)</li>
+                            </ul>
+                            <p>Limitations:</p>
+                            <ul>
+                                <li>"Dying ReLU" problem: neurons can get stuck in an inactive state</li>
+                                <li>Not zero-centered</li>
+                                <li>Unbounded output for positive inputs</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Tanh (Hyperbolic Tangent)</strong></p>
+                            <p>Formula: tanh(x) = (e<sup>x</sup> - e<sup>-x</sup>) / (e<sup>x</sup> + e<sup>-x</sup>)</p>
+                            <p>Graph: S-shaped curve similar to sigmoid but ranges from -1 to 1 instead of 0 to 1.</p>
+                            <p>Appropriate Use:</p>
+                            <ul>
+                                <li>Hidden layers of neural networks, especially when zero-centered outputs are beneficial</li>
+                                <li>Recurrent neural networks</li>
+                                <li>When the data is naturally centered around zero</li>
+                            </ul>
+                            <p>Advantages:</p>
+                            <ul>
+                                <li>Zero-centered outputs, which can help with convergence</li>
+                                <li>Bounded output between -1 and 1</li>
+                                <li>Stronger gradients near zero compared to sigmoid</li>
+                            </ul>
+                            <p>Limitations:</p>
+                            <ul>
+                                <li>Still suffers from vanishing gradient problem for very positive or negative inputs</li>
+                                <li>Computationally expensive (involves exponential operations)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Softmax</strong></p>
+                            <p>Formula: softmax(x<sub>i</sub>) = e<sup>x<sub>i</sub></sup> / Σ<sub>j</sub> e<sup>x<sub>j</sub></sup></p>
+                            <p>Graph: Not typically visualized as a single curve since it operates on vectors.</p>
+                            <p>Appropriate Use:</p>
+                            <ul>
+                                <li>Output layer of multi-class classification problems</li>
+                                <li>When outputs need to be interpreted as probabilities that sum to 1</li>
+                                <li>In attention mechanisms in transformer models</li>
+                            </ul>
+                            <p>Advantages:</p>
+                            <ul>
+                                <li>Outputs are interpretable as probabilities (sum to 1)</li>
+                                <li>Emphasizes the largest values while suppressing significantly smaller ones</li>
+                                <li>Differentiable, allowing for backpropagation</li>
+                            </ul>
+                            <p>Limitations:</p>
+                            <ul>
+                                <li>Computationally expensive for large output spaces</li>
+                                <li>Can be numerically unstable (requires normalization tricks)</li>
+                                <li>Not suitable for multi-label classification (where multiple classes can be true simultaneously)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. Convolutional Neural Networks</h3>
+                <p>Explain the following components of Convolutional Neural Networks (CNNs) and their roles:</p>
+                
+                <ol type="a">
+                    <li>Convolutional layers</li>
+                    <li>Filters (kernels)</li>
+                    <li>Pooling layers</li>
+                    <li>Stride and padding</li>
+                    <li>Fully connected layers</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>Convolutional Layers</strong></p>
+                            <p>Convolutional layers are the core building blocks of CNNs that perform the convolution operation:</p>
+                            <ul>
+                                <li>They apply a set of learnable filters to the input data</li>
+                                <li>Each filter slides across the input, computing dot products between the filter values and the input values at each position</li>
+                                <li>This creates feature maps that highlight patterns such as edges, textures, and more complex features in deeper layers</li>
+                                <li>Convolutional layers have significantly fewer parameters than fully connected layers due to parameter sharing and local connectivity</li>
+                            </ul>
+                            <p>The key advantage of convolutional layers is that they can detect patterns regardless of where they appear in the input, making them translation invariant.</p>
+                        </li>
+                        <li>
+                            <p><strong>Filters (Kernels)</strong></p>
+                            <p>Filters, also called kernels, are the learnable parameters in convolutional layers:</p>
+                            <ul>
+                                <li>Typically small matrices (e.g., 3×3, 5×5) that contain weights</li>
+                                <li>Each filter is specialized to detect a specific pattern or feature</li>
+                                <li>Early layers might detect simple features like edges and corners</li>
+                                <li>Deeper layers detect more complex patterns like textures, parts of objects, or entire objects</li>
+                                <li>The number of filters in a layer determines the depth of the output feature map</li>
+                            </ul>
+                            <p>During training, the values in these filters are learned to optimize the network's performance on the task.</p>
+                        </li>
+                        <li>
+                            <p><strong>Pooling Layers</strong></p>
+                            <p>Pooling layers reduce the spatial dimensions (width and height) of the feature maps:</p>
+                            <ul>
+                                <li><u>Max Pooling:</u> Takes the maximum value from a region of the feature map</li>
+                                <li><u>Average Pooling:</u> Takes the average value from a region</li>
+                                <li><u>Global Pooling:</u> Reduces each feature map to a single value (maximum or average)</li>
+                            </ul>
+                            <p>Benefits of pooling:</p>
+                            <ul>
+                                <li>Reduces computation by decreasing the feature map size</li>
+                                <li>Provides a form of translation invariance</li>
+                                <li>Helps prevent overfitting by reducing the number of parameters</li>
+                                <li>Makes the network more robust to small variations in the input</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Stride and Padding</strong></p>
+                            <p><u>Stride:</u></p>
+                            <ul>
+                                <li>Determines how many pixels the filter moves at each step during the convolution operation</li>
+                                <li>Stride of 1 means the filter moves one pixel at a time</li>
+                                <li>Larger strides reduce the spatial dimensions of the output feature map</li>
+                                <li>Can be used as an alternative to pooling for downsampling</li>
+                            </ul>
+                            <p><u>Padding:</u></p>
+                            <ul>
+                                <li>Adding extra pixels (usually zeros) around the border of the input</li>
+                                <li><u>Valid Padding (No Padding):</u> No padding is added, resulting in a smaller output</li>
+                                <li><u>Same Padding:</u> Padding is added to ensure the output has the same spatial dimensions as the input</li>
+                                <li>Helps preserve information at the borders of the input</li>
+                                <li>Allows for deeper networks by preventing the feature maps from shrinking too quickly</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Fully Connected Layers</strong></p>
+                            <p>Fully connected layers (or dense layers) connect every neuron in one layer to every neuron in the next layer:</p>
+                            <ul>
+                                <li>Typically used in the final stages of a CNN after the convolutional and pooling layers</li>
+                                <li>Transform the spatial features learned by convolutional layers into a form suitable for the final classification or regression task</li>
+                                <li>Each neuron receives input from all neurons in the previous layer</li>
+                                <li>Contains the majority of the parameters in many CNN architectures</li>
+                            </ul>
+                            <p>The sequence of operations in a typical CNN is:</p>
+                            <ol>
+                                <li>Convolutional layers extract features</li>
+                                <li>Pooling layers reduce spatial dimensions</li>
+                                <li>Repeat steps 1-2 multiple times</li>
+                                <li>Flatten the final feature maps into a 1D vector</li>
+                                <li>Pass through fully connected layers</li>
+                                <li>Output the final prediction</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise3">
+            <h2>Exercise 3: Forward Propagation Calculation</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Simple Neural Network Computation</h3>
+                <p>Consider a simple neural network with:</p>
+                <ul>
+                    <li>Input layer: 2 neurons (x<sub>1</sub> = 0.5, x<sub>2</sub> = -0.1)</li>
+                    <li>Hidden layer: 2 neurons with ReLU activation</li>
+                    <li>Output layer: 1 neuron with sigmoid activation</li>
+                </ul>
+                
+                <p>Weights and biases:</p>
+                <ul>
+                    <li>W<sub>1</sub> (input to hidden): [[0.2, 0.3], [0.1, -0.4]]</li>
+                    <li>b<sub>1</sub> (hidden bias): [0.1, 0.2]</li>
+                    <li>W<sub>2</sub> (hidden to output): [[0.5], [0.6]]</li>
+                    <li>b<sub>2</sub> (output bias): [0.1]</li>
+                </ul>
+                
+                <p>Perform a forward pass through this network, showing all calculations step by step.</p>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>Step 1: Calculate the input to the hidden layer</strong></p>
+                    <p>z<sub>1</sub> = X · W<sub>1</sub> + b<sub>1</sub></p>
+                    <p>z<sub>1,1</sub> = (0.5 × 0.2) + (-0.1 × 0.1) + 0.1 = 0.5 × 0.2 - 0.1 × 0.1 + 0.1 = 0.1 - 0.01 + 0.1 = 0.19</p>
+                    <p>z<sub>1,2</sub> = (0.5 × 0.3) + (-0.1 × -0.4) + 0.2 = 0.5 × 0.3 + 0.1 × 0.4 + 0.2 = 0.15 + 0.04 + 0.2 = 0.39</p>
+                    
+                    <p><strong>Step 2: Apply ReLU activation to the hidden layer</strong></p>
+                    <p>a<sub>1</sub> = ReLU(z<sub>1</sub>)</p>
+                    <p>a<sub>1,1</sub> = ReLU(0.19) = max(0, 0.19) = 0.19</p>
+                    <p>a<sub>1,2</sub> = ReLU(0.39) = max(0, 0.39) = 0.39</p>
+                    
+                    <p><strong>Step 3: Calculate the input to the output layer</strong></p>
+                    <p>z<sub>2</sub> = a<sub>1</sub> · W<sub>2</sub> + b<sub>2</sub></p>
+                    <p>z<sub>2</sub> = (0.19 × 0.5) + (0.39 × 0.6) + 0.1 = 0.19 × 0.5 + 0.39 × 0.6 + 0.1 = 0.095 + 0.234 + 0.1 = 0.429</p>
+                    
+                    <p><strong>Step 4: Apply sigmoid activation to the output layer</strong></p>
+                    <p>a<sub>2</sub> = sigmoid(z<sub>2</sub>) = 1 / (1 + e<sup>-z<sub>2</sub></sup>)</p>
+                    <p>a<sub>2</sub> = sigmoid(0.429) = 1 / (1 + e<sup>-0.429</sup>) ≈ 1 / (1 + 0.651) ≈ 1 / 1.651 ≈ 0.606</p>
+                    
+                    <p><strong>Final output: 0.606</strong></p>
+                    
+                    <p>This means that given the input [0.5, -0.1], the neural network predicts a value of approximately 0.606.</p>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Gradient Descent Intuition</h3>
+                <p>Explain how gradient descent works to update the weights and biases in a neural network. Include in your explanation:</p>
+                
+                <ol type="a">
+                    <li>The role of the learning rate</li>
+                    <li>The difference between batch, mini-batch, and stochastic gradient descent</li>
+                    <li>How the chain rule is applied in backpropagation</li>
+                    <li>Common challenges and solutions in gradient descent optimization</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <ol type="a">
+                        <li>
+                            <p><strong>The Role of the Learning Rate</strong></p>
+                            <p>The learning rate (α) determines the step size during gradient descent:</p>
+                            <ul>
+                                <li>It scales the gradient to control how much the weights are updated in each iteration</li>
+                                <li>The weight update rule is: w = w - α × ∇L(w), where ∇L(w) is the gradient of the loss with respect to the weight</li>
+                            </ul>
+                            <p>Choosing the learning rate:</p>
+                            <ul>
+                                <li><u>Too large:</u> Can cause divergence, where the loss increases instead of decreases</li>
+                                <li><u>Too small:</u> Can result in slow convergence or getting stuck in local minima</li>
+                                <li><u>Just right:</u> Allows for efficient convergence to a good minimum</li>
+                            </ul>
+                            <p>Advanced techniques include:</p>
+                            <ul>
+                                <li>Learning rate schedules (decreasing the learning rate over time)</li>
+                                <li>Adaptive learning rate methods (AdaGrad, RMSProp, Adam)</li>
+                                <li>Learning rate warmup (gradually increasing from a small value)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Batch, Mini-Batch, and Stochastic Gradient Descent</strong></p>
+                            <p><u>Batch Gradient Descent:</u></p>
+                            <ul>
+                                <li>Uses the entire dataset to compute the gradient in each iteration</li>
+                                <li>Advantages: Stable convergence, accurate gradient estimation</li>
+                                <li>Disadvantages: Slow for large datasets, can get stuck in local minima, requires the entire dataset to fit in memory</li>
+                            </ul>
+                            <p><u>Stochastic Gradient Descent (SGD):</u></p>
+                            <ul>
+                                <li>Uses a single random example to compute the gradient in each iteration</li>
+                                <li>Advantages: Fast updates, can escape local minima, works with streaming data</li>
+                                <li>Disadvantages: High variance in updates, noisy convergence, may never settle at the minimum</li>
+                            </ul>
+                            <p><u>Mini-Batch Gradient Descent:</u></p>
+                            <ul>
+                                <li>Uses a small random subset (mini-batch) of the dataset in each iteration</li>
+                                <li>Advantages: Balance between batch and stochastic, more stable than SGD but faster than batch, parallelizable on GPUs</li>
+                                <li>Disadvantages: Requires tuning of the mini-batch size</li>
+                                <li>Typical mini-batch sizes range from 32 to 256</li>
+                            </ul>
+                            <p>Mini-batch gradient descent is the most commonly used approach in practice.</p>
+                        </li>
+                        <li>
+                            <p><strong>Chain Rule in Backpropagation</strong></p>
+                            <p>Backpropagation uses the chain rule from calculus to efficiently compute gradients:</p>
+                            <ul>
+                                <li>The chain rule states that if z = f(y) and y = g(x), then dz/dx = (dz/dy) × (dy/dx)</li>
+                                <li>In a neural network, we need to compute the gradient of the loss with respect to each weight</li>
+                            </ul>
+                            <p>For a simple network with one hidden layer:</p>
+                            <ol>
+                                <li>Compute the gradient of the loss with respect to the output: ∂L/∂y</li>
+                                <li>Compute the gradient of the output with respect to the pre-activation: ∂y/∂z = derivative of the activation function</li>
+                                <li>Compute the gradient of the pre-activation with respect to the weights: ∂z/∂w = input to that layer</li>
+                                <li>Apply the chain rule: ∂L/∂w = (∂L/∂y) × (∂y/∂z) × (∂z/∂w)</li>
+                                <li>For deeper layers, continue propagating the gradient backward</li>
+                            </ol>
+                            <p>The key insight of backpropagation is that it reuses intermediate results, making the computation efficient even for deep networks.</p>
+                        </li>
+                        <li>
+                            <p><strong>Challenges and Solutions in Gradient Descent</strong></p>
+                            <p><u>Vanishing Gradients:</u></p>
+                            <ul>
+                                <li>Problem: Gradients become extremely small in early layers of deep networks</li>
+                                <li>Solutions: ReLU activations, batch normalization, residual connections, proper weight initialization</li>
+                            </ul>
+                            <p><u>Exploding Gradients:</u></p>
+                            <ul>
+                                <li>Problem: Gradients become extremely large, causing unstable updates</li>
+                                <li>Solutions: Gradient clipping, weight regularization, batch normalization</li>
+                            </ul>
+                            <p><u>Local Minima and Saddle Points:</u></p>
+                            <ul>
+                                <li>Problem: Optimization can get stuck in suboptimal solutions</li>
+                                <li>Solutions: Momentum, stochastic methods, learning rate schedules, second-order methods</li>
+                            </ul>
+                            <p><u>Slow Convergence:</u></p>
+                            <ul>
+                                <li>Problem: Basic gradient descent can be slow to converge</li>
+                                <li>Solutions: Adaptive methods (Adam, RMSProp), momentum, proper learning rate tuning</li>
+                            </ul>
+                            <p><u>Overfitting:</u></p>
+                            <ul>
+                                <li>Problem: Model performs well on training data but poorly on new data</li>
+                                <li>Solutions: Regularization (L1, L2), dropout, early stopping, data augmentation</li>
+                            </ul>
+                            <p>Modern deep learning frameworks implement many of these solutions, making it easier to train complex models effectively.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section id="exercise4">
+            <h2>Exercise 4: CNN Filter Placement</h2>
+            
+            <div class="exercise-problem">
+                <h3>1. Filter Position Calculation</h3>
+                <p>For each of the following CNN configurations, calculate the number of positions where the filter can be placed, and the output feature map dimensions:</p>
+                
+                <ol type="a">
+                    <li>Input: 28×28 image, Filter: 5×5, Stride: 1, Padding: 0</li>
+                    <li>Input: 32×32 image, Filter: 3×3, Stride: 2, Padding: 1</li>
+                    <li>Input: 64×64 image, Filter: 7×7, Stride: 2, Padding: 3</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>The formula for calculating the output dimensions of a convolutional layer is:</p>
+                    <p>Output dimension = ((Input dimension - Filter size + 2 × Padding) / Stride) + 1</p>
+                    
+                    <ol type="a">
+                        <li>
+                            <p><strong>Input: 28×28, Filter: 5×5, Stride: 1, Padding: 0</strong></p>
+                            <p>Output width = ((28 - 5 + 2 × 0) / 1) + 1 = (28 - 5) / 1 + 1 = 23 + 1 = 24</p>
+                            <p>Output height = ((28 - 5 + 2 × 0) / 1) + 1 = (28 - 5) / 1 + 1 = 23 + 1 = 24</p>
+                            <p>Output dimensions: 24×24</p>
+                            <p>Number of filter positions: 24 × 24 = 576</p>
+                        </li>
+                        <li>
+                            <p><strong>Input: 32×32, Filter: 3×3, Stride: 2, Padding: 1</strong></p>
+                            <p>Output width = ((32 - 3 + 2 × 1) / 2) + 1 = ((32 - 3 + 2) / 2) + 1 = (31 / 2) + 1 = 15.5 + 1 = 16</p>
+                            <p>Output height = ((32 - 3 + 2 × 1) / 2) + 1 = ((32 - 3 + 2) / 2) + 1 = (31 / 2) + 1 = 15.5 + 1 = 16</p>
+                            <p>Output dimensions: 16×16</p>
+                            <p>Number of filter positions: 16 × 16 = 256</p>
+                        </li>
+                        <li>
+                            <p><strong>Input: 64×64, Filter: 7×7, Stride: 2, Padding: 3</strong></p>
+                            <p>Output width = ((64 - 7 + 2 × 3) / 2) + 1 = ((64 - 7 + 6) / 2) + 1 = (63 / 2) + 1 = 31.5 + 1 = 32</p>
+                            <p>Output height = ((64 - 7 + 2 × 3) / 2) + 1 = ((64 - 7 + 6) / 2) + 1 = (63 / 2) + 1 = 31.5 + 1 = 32</p>
+                            <p>Output dimensions: 32×32</p>
+                            <p>Number of filter positions: 32 × 32 = 1024</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>2. Pooling Layer Calculation</h3>
+                <p>For each of the following pooling configurations, calculate the output dimensions:</p>
+                
+                <ol type="a">
+                    <li>Input: 24×24 feature map, Pool size: 2×2, Stride: 2</li>
+                    <li>Input: 16×16 feature map, Pool size: 3×3, Stride: 1</li>
+                    <li>Input: 32×32 feature map, Pool size: 2×2, Stride: 2</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p>The formula for calculating the output dimensions of a pooling layer is the same as for convolutional layers, but pooling typically doesn't use padding:</p>
+                    <p>Output dimension = ((Input dimension - Pool size) / Stride) + 1</p>
+                    
+                    <ol type="a">
+                        <li>
+                            <p><strong>Input: 24×24, Pool size: 2×2, Stride: 2</strong></p>
+                            <p>Output width = ((24 - 2) / 2) + 1 = (22 / 2) + 1 = 11 + 1 = 12</p>
+                            <p>Output height = ((24 - 2) / 2) + 1 = (22 / 2) + 1 = 11 + 1 = 12</p>
+                            <p>Output dimensions: 12×12</p>
+                        </li>
+                        <li>
+                            <p><strong>Input: 16×16, Pool size: 3×3, Stride: 1</strong></p>
+                            <p>Output width = ((16 - 3) / 1) + 1 = 13 + 1 = 14</p>
+                            <p>Output height = ((16 - 3) / 1) + 1 = 13 + 1 = 14</p>
+                            <p>Output dimensions: 14×14</p>
+                        </li>
+                        <li>
+                            <p><strong>Input: 32×32, Pool size: 2×2, Stride: 2</strong></p>
+                            <p>Output width = ((32 - 2) / 2) + 1 = (30 / 2) + 1 = 15 + 1 = 16</p>
+                            <p>Output height = ((32 - 2) / 2) + 1 = (30 / 2) + 1 = 15 + 1 = 16</p>
+                            <p>Output dimensions: 16×16</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="exercise-problem">
+                <h3>3. CNN Architecture Design</h3>
+                <p>Design a CNN architecture for classifying 32×32 color images into 10 categories. Specify:</p>
+                
+                <ol type="a">
+                    <li>The number and type of layers</li>
+                    <li>The number of filters, filter sizes, and strides for convolutional layers</li>
+                    <li>The pooling types and sizes</li>
+                    <li>The number of neurons in fully connected layers</li>
+                    <li>The activation functions used</li>
+                </ol>
+                
+                <div class="solution">
+                    <h4>Solution</h4>
+                    <p><strong>CNN Architecture for 32×32 Color Image Classification (10 categories)</strong></p>
+                    
+                    <p><u>Input Layer:</u></p>
+                    <ul>
+                        <li>32×32×3 (RGB color channels)</li>
+                    </ul>
+                    
+                    <p><u>Convolutional Block 1:</u></p>
+                    <ul>
+                        <li>Conv2D: 32 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>Conv2D: 32 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>MaxPooling: 2×2 pool size, stride 2</li>
+                        <li>Dropout: 0.25 rate</li>
+                    </ul>
+                    <p>Output shape after block 1: 16×16×32</p>
+                    
+                    <p><u>Convolutional Block 2:</u></p>
+                    <ul>
+                        <li>Conv2D: 64 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>Conv2D: 64 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>MaxPooling: 2×2 pool size, stride 2</li>
+                        <li>Dropout: 0.25 rate</li>
+                    </ul>
+                    <p>Output shape after block 2: 8×8×64</p>
+                    
+                    <p><u>Convolutional Block 3:</u></p>
+                    <ul>
+                        <li>Conv2D: 128 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>Conv2D: 128 filters, 3×3 kernel, stride 1, padding 'same', ReLU activation</li>
+                        <li>MaxPooling: 2×2 pool size, stride 2</li>
+                        <li>Dropout: 0.25 rate</li>
+                    </ul>
+                    <p>Output shape after block 3: 4×4×128</p>
+                    
+                    <p><u>Flatten Layer:</u></p>
+                    <ul>
+                        <li>Flatten the 4×4×128 feature maps to a 1D vector of size 2048</li>
+                    </ul>
+                    
+                    <p><u>Fully Connected Layers:</u></p>
+                    <ul>
+                        <li>Dense: 512 neurons, ReLU activation</li>
+                        <li>Dropout: 0.5 rate</li>
+                        <li>Dense: 10 neurons (one for each category), Softmax activation</li>
+                    </ul>
+                    
+                    <p><u>Model Summary:</u></p>
+                    <ol>
+                        <li>Input: 32×32×3</li>
+                        <li>Conv2D: 32 filters, 3×3, ReLU</li>
+                        <li>Conv2D: 32 filters, 3×3, ReLU</li>
+                        <li>MaxPooling: 2×2</li>
+                        <li>Dropout: 0.25</li>
+                        <li>Conv2D: 64 filters, 3×3, ReLU</li>
+                        <li>Conv2D: 64 filters, 3×3, ReLU</li>
+                        <li>MaxPooling: 2×2</li>
+                        <li>Dropout: 0.25</li>
+                        <li>Conv2D: 128 filters, 3×3, ReLU</li>
+                        <li>Conv2D: 128 filters, 3×3, ReLU</li>
+                        <li>MaxPooling: 2×2</li>
+                        <li>Dropout: 0.25</li>
+                        <li>Flatten</li>
+                        <li>Dense: 512 neurons, ReLU</li>
+                        <li>Dropout: 0.5</li>
+                        <li>Dense: 10 neurons, Softmax</li>
+                    </ol>
+                    
+                    <p><u>Design Rationale:</u></p>
+                    <ul>
+                        <li>Increasing filter counts (32 → 64 → 128) as we go deeper to capture more complex features</li>
+                        <li>Small 3×3 filters to keep the number of parameters manageable</li>
+                        <li>Multiple convolutional layers before pooling to learn more complex features</li>
+                        <li>Dropout layers to prevent overfitting</li>
+                        <li>ReLU activation for faster training and to mitigate vanishing gradients</li>
+                        <li>Softmax activation in the output layer for multi-class classification</li>
+                    </ul>
+                    
+                    <p>This architecture is similar to VGG-style networks but scaled down for 32×32 images. It would be suitable for datasets like CIFAR-10.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="navigation-buttons">
+            <a href="../index.html" class="button">Back to Course</a>
+            <a href="module2_exercises.html" class="button">Previous: Module 2 Exercises</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Interactive AI Course. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Show/hide solutions
+        document.addEventListener('DOMContentLoaded', function() {
+            const solutions = document.querySelectorAll('.solution');
+            
+            solutions.forEach(solution => {
+                // Initially hide solutions
+                solution.style.display = 'none';
+                
+                // Create show/hide button
+                const button = document.createElement('button');
+                button.textContent = 'Show Solution';
+                button.className = 'button';
+                
+                button.addEventListener('click', function() {
+                    if (solution.style.display === 'none') {
+                        solution.style.display = 'block';
+                        button.textContent = 'Hide Solution';
+                    } else {
+                        solution.style.display = 'none';
+                        button.textContent = 'Show Solution';
+                    }
+                });
+                
+                // Insert button before the solution
+                solution.parentNode.insertBefore(button, solution);
+            });
+        });
+    </script>
+</body>
+</html>
