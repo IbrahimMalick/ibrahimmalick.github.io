@@ -172,5 +172,43 @@
       }
     });
   </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const questions = document.querySelectorAll('.quiz-question');
+    questions.forEach((question, index) => {
+      const choices = question.querySelectorAll('li');
+      const feedback = document.createElement('div');
+      feedback.className = 'feedback';
+      feedback.style.marginTop = '0.5rem';
+      question.appendChild(feedback);
+
+      const questionKey = `quiz_q${index}`;
+      const savedStatus = localStorage.getItem(questionKey);
+      if (savedStatus === 'completed') {
+        question.style.backgroundColor = '#e0f7e9';
+        feedback.textContent = '✅ Already completed';
+        feedback.style.color = 'green';
+        return; // Don't allow interaction
+      }
+
+      choices.forEach(choice => {
+        choice.style.cursor = 'pointer';
+        choice.addEventListener('click', () => {
+          if (choice.innerHTML.includes('<strong>')) {
+            feedback.textContent = '✅ Correct!';
+            feedback.style.color = 'green';
+            question.style.backgroundColor = '#e0f7e9';
+            localStorage.setItem(questionKey, 'completed');
+          } else {
+            feedback.textContent = '❌ Try again.';
+            feedback.style.color = 'red';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>
