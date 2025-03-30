@@ -36,7 +36,84 @@
       <canvas id="overviewChart" width="400" height="200"></canvas>
     </section>
 
-    <!-- Module sections stay unchanged -->
+    <section id="module1">
+      <h2>Module 1: Search and Problem Solving</h2>
+      <h3>Lesson 1.1: Formulating Search Problems</h3>
+      <ul>
+        <li><strong>State Space:</strong> All possible configurations in our problem domain</li>
+        <li><strong>Initial State:</strong> Our starting point</li>
+        <li><strong>Goal State(s):</strong> The desired outcomes we're searching for</li>
+        <li><strong>Actions:</strong> Operations that transform one state into another</li>
+        <li><strong>Transition Model:</strong> Defines how actions change states</li>
+        <li><strong>Action Cost Function:</strong> Assigns a numeric cost to each action</li>
+      </ul>
+      <h3>Lesson 1.2: Search Algorithms</h3>
+      <h4>Breadth-First Search (BFS)</h4>
+      <ul>
+        <li>Explores nodes level by level</li>
+        <li>Complete and optimal (uniform costs)</li>
+        <li>Memory-intensive for wide trees</li>
+      </ul>
+      <h4>Greedy Best-First Search (GBFS)</h4>
+      <ul>
+        <li>Uses a heuristic function prioritizing nodes</li>
+        <li>Often faster but not guaranteed to be optimal</li>
+        <li>Can get stuck in loops or dead ends</li>
+      </ul>
+      <h3>Lesson 1.3: Tree Search vs Graph Search</h3>
+      <ul>
+        <li><strong>Tree Search:</strong>
+          <ul>
+            <li>Treats the search space as a tree</li>
+            <li>May revisit same states through different paths</li>
+            <li>Does not use memory to avoid redundant exploration</li>
+          </ul>
+        </li>
+        <li><strong>Graph Search:</strong>
+          <ul>
+            <li>Keeps track of visited states to avoid redundancy</li>
+            <li>More efficient for problems with cycles or multiple paths</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="module2">
+      <h2>Module 2: Propositional Logic</h2>
+      <h3>Lesson 2.1: Logical Agents</h3>
+      <p>Logical agents apply logic to determine the consequences of known facts. They use knowledge representation and inference to make decisions.</p>
+      <h3>Lesson 2.2: Syntax and Semantics</h3>
+      <ul>
+        <li><strong>Symbols and Sentences:</strong> Building blocks of logical expressions</li>
+        <li><strong>Truth Tables:</strong> Define how logical connectives behave</li>
+        <li><strong>Logical Equivalence:</strong> Different sentences can represent the same truth</li>
+      </ul>
+      <h3>Lesson 2.3: Inference and Resolution</h3>
+      <ul>
+        <li><strong>Modus Ponens:</strong> From "P → Q" and "P", infer "Q"</li>
+        <li><strong>Resolution:</strong> A single inference rule for proving entailment</li>
+        <li><strong>Forward and Backward Chaining:</strong> Reasoning methods for knowledge-based systems</li>
+      </ul>
+    </section>
+
+    <section id="module3">
+      <h2>Module 3: Introduction to Machine Learning</h2>
+      <h3>Lesson 3.1: What is Machine Learning?</h3>
+      <p>Machine Learning is the study of algorithms that learn from and make predictions on data. It's a core subset of AI.</p>
+      <h3>Lesson 3.2: Supervised Learning</h3>
+      <ul>
+        <li><strong>Linear Regression:</strong> Predicts numeric outcomes</li>
+        <li><strong>Logistic Regression:</strong> Classifies binary outcomes</li>
+        <li><strong>Decision Trees:</strong> Model decisions via branching questions</li>
+      </ul>
+      <h3>Lesson 3.3: Unsupervised Learning</h3>
+      <ul>
+        <li><strong>K-Means Clustering:</strong> Groups similar data points</li>
+        <li><strong>Dimensionality Reduction:</strong> Simplifies data while preserving structure</li>
+      </ul>
+      <h3>Lesson 3.4: Neural Networks</h3>
+      <p>Inspired by biological brains, neural networks learn patterns via layers of interconnected "neurons." Popular in deep learning.</p>
+    </section>
 
     <section id="assessment">
       <h2>Assessment</h2>
