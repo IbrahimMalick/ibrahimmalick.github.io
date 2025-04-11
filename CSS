@@ -1,18 +1,18 @@
-/* Basic Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Container */
+/* Container for consistent width */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Header */
+/* Header Styling */
 header {
   background-color: #fff;
   border-bottom: 1px solid #eee;
@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 .btn {
-  background-color: #007BFF;  /* Customize your primary brand color here */
+  background-color: #007BFF;  /* Customize your primary brand color */
   padding: 10px 20px;
   text-decoration: none;
   color: #fff;
