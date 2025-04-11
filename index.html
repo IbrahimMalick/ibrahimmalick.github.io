@@ -1,32 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Digital Tutor | Home</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="The Digital Tutor Logo">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Interactive AI Course</title>
-<style>body{font-family:sans-serif;padding:1rem;background:#f4f4f4;}
-details{background:#fff;margin:1rem 0;padding:1rem;border-radius:8px;box-shadow:0 0 5px rgba(0,0,0,0.1);}
-.quiz-question{background:#fff;padding:1rem;margin:1rem 0;border-left:5px solid #3498db;border-radius:5px;}
-.quiz-question li{cursor:pointer;margin:0.25rem 0;}.feedback{margin-top:0.5rem;font-weight:bold;}
-</style></head><body>
-<h1>Interactive AI Course</h1>
-<details id="module1"><summary>Module 1: Search and Problem Solving</summary><div class="quiz-question"><h4>Q1: What does BFS explore first?</h4><ul><li>Depth nodes</li><li>Goal states</li><li><strong>Shallowest nodes</strong></li><li>Random nodes</li></ul></div>
-<div class="quiz-question"><h4>Q2: Which search avoids revisiting states?</h4><ul><li>Tree Search</li><li><strong>Graph Search</strong></li><li>DFS</li><li>GBFS</li></ul></div>
-<div class="quiz-question"><h4>Q3: Which algorithm uses heuristics?</h4><ul><li>BFS</li><li><strong>A*</strong></li><li>DFS</li><li>UCS</li></ul></div>
-<div class="quiz-question"><h4>Q4: What is an action cost function?</h4><ul><li>Defines goals</li><li><strong>Assigns numeric value to actions</strong></li><li>Models transitions</li><li>Tracks visited nodes</li></ul></div>
-<div class="quiz-question"><h4>Q5: What is a state space?</h4><ul><li>Graph</li><li>Set of all goals</li><li><strong>Set of all possible configurations</strong></li><li>Path to target</li></ul></div>
-<div class="quiz-question"><h4>Q6: What happens if BFS has infinite depth?</h4><ul><li>It completes</li><li>It fails</li><li><strong>It loops forever</strong></li><li>It reaches optimal state</li></ul></div></details>
-<details id="module2"><summary>Module 2: Propositional Logic</summary><div class="quiz-question"><h4>Q7: What is a logical agent?</h4><ul><li>An agent with emotions</li><li><strong>An agent that reasons using logic</strong></li><li>A human agent</li><li>A simple program</li></ul></div>
-<div class="quiz-question"><h4>Q8: What is a truth table?</h4><ul><li>A data table</li><li>A table of agents</li><li><strong>A logic output table</strong></li><li>A boolean matrix</li></ul></div>
-<div class="quiz-question"><h4>Q9: Modus Ponens infers:</h4><ul><li>P from Q</li><li><strong>Q from P and P → Q</strong></li><li>Q → P</li><li>None</li></ul></div>
-<div class="quiz-question"><h4>Q10: Symbols in logic are:</h4><ul><li>Operators</li><li>Numbers</li><li><strong>Building blocks</strong></li><li>Strings</li></ul></div>
-<div class="quiz-question"><h4>Q11: Which is NOT a logical connective?</h4><ul><li>AND</li><li>OR</li><li>XOR</li><li><strong>PLUS</strong></li></ul></div>
-<div class="quiz-question"><h4>Q12: What is logical equivalence?</h4><ul><li>Same syntax</li><li>Always true</li><li><strong>Same truth in all models</strong></li><li>Identical variables</li></ul></div></details>
-<details id="module3"><summary>Module 3: Introduction to Machine Learning</summary><div class="quiz-question"><h4>Q13: ML is a subset of:</h4><ul><li><strong>AI</strong></li><li>Physics</li><li>Robotics</li><li>Statistics</li></ul></div>
-<div class="quiz-question"><h4>Q14: What is labeled data?</h4><ul><li><strong>Data with tags</strong></li><li>Unsorted data</li><li>Raw input</li><li>Filtered data</li></ul></div>
-<div class="quiz-question"><h4>Q15: Which is used for classification?</h4><ul><li>Linear regression</li><li><strong>Logistic regression</strong></li><li>K-Means</li><li>PCA</li></ul></div>
-<div class="quiz-question"><h4>Q16: What does K-Means do?</h4><ul><li>Classifies text</li><li><strong>Clusters data</strong></li><li>Reduces dimensions</li><li>Sorts strings</li></ul></div>
-<div class="quiz-question"><h4>Q17: Neural networks are inspired by:</h4><ul><li>Animals</li><li><strong>Brains</strong></li><li>Circuits</li><li>Data</li></ul></div>
-<div class="quiz-question"><h4>Q18: PCA is used for:</h4><ul><li>Classification</li><li>Regression</li><li>Clustering</li><li><strong>Dimensionality reduction</strong></li></ul></div></details>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.quiz-question').forEach((q,i)=>{let c=q.querySelectorAll('li'),f=document.createElement('div');f.className='feedback';q.appendChild(f);let k='quiz_q'+i,s=localStorage.getItem(k);if(s==='done'){q.style.backgroundColor='#e0f7e9';f.textContent='✅ Already completed';f.style.color='green';return;}
-c.forEach(l=>{l.addEventListener('click',()=>{if(l.innerHTML.includes('<strong>')){f.textContent='✅ Correct!';f.style.color='green';q.style.backgroundColor='#e0f7e9';localStorage.setItem(k,'done');}else{f.textContent='❌ Try again.';f.style.color='red';}});});});});
-</script></body></html>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to The Digital Tutor</h1>
+      <p>Empowering you with digital skills and knowledge.</p>
+      <a href="#courses" class="btn">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses">
+    <div class="container">
+      <h2>Our Courses</h2>
+      <div class="course-cards">
+        <!-- Example Course Card -->
+        <div class="card">
+          <img src="assets/images/course1.jpg" alt="Course 1">
+          <h3>Course Title 1</h3>
+          <p>Brief description of Course 1.</p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+        <!-- Add more course cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About The Digital Tutor</h2>
+      <p>Introduce your mission, background, and the value you deliver to your audience.</p>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog">
+    <div class="container">
+      <h2>Latest Blog Posts</h2>
+      <div class="blog-cards">
+        <!-- Example Blog Card -->
+        <div class="card">
+          <img src="assets/images/blog1.jpg" alt="Blog Post 1">
+          <h3>Blog Post Title 1</h3>
+          <p>Short excerpt of the blog post.</p>
+          <a href="#" class="btn">Read More</a>
+        </div>
+        <!-- Add more blog cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="mailto:contact@thedigitaltutor.net" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 The Digital Tutor. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
